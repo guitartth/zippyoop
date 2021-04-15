@@ -1,0 +1,173 @@
+@media only screen and (min-width: 1080px){
+    /* browser styling */
+    html {
+        width: 100%;
+        text-align: center;
+    }
+
+    .copyright{
+        text-align: right;
+        margin-right: 15px;
+    }
+
+    h1 {
+        text-align: left;
+        font-size: 60px;
+        margin-left: 15px;
+    }
+
+    #userSelect {
+        text-align: center;
+    }
+
+    .list-row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #manageMakes, #manageClasses, #manageTypes, #addVehicles {
+        padding: 3px;   
+    }
+
+    .modify-button, .narrow-button  {
+        background-color: gray;
+        color: black;
+    }
+
+    #addVehicles {
+        margin-top: 15px;
+    }
+
+    #make_drop, #type_drop, #class_drop {
+        padding: 7px;
+        margin: 4px;
+    }
+
+    #class_drop {
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        margin-bottom: 1px;
+    }
+
+    #add__inputs {
+        text-align: center;
+    }
+
+    .register-button {
+        text-align: right;
+    }
+}
+
+@media only screen and (min-width: 416px) and (max-width: 1079px){
+    /* tablet styling */
+    html {
+        text-align: center;
+        width: 100%;
+    }
+
+    .copyright{
+        text-align: right;
+        margin-right: 15px;
+    }
+
+    h1 {
+        font-size: 65px;
+    }
+
+    #userSelect {
+        font-size: 30px;
+    }
+
+    .modify-button, .narrow-button  {
+        background-color: gray;
+        color: black;
+    }
+
+    #addVehicles {
+        margin-top: 15px;
+    }
+
+    #make_drop, #type_drop, #class_drop {
+        padding: 3px;
+        margin: 2px;
+    }
+
+    #make_drop {
+        margin-top: -30px;
+    }
+
+    #class_drop {
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        margin-bottom: 1px;
+    }
+
+    #manageMakes, #manageClasses, #manageTypes, #addVehicles {
+        padding: 3px;   
+    }
+
+    #login-area {
+        text-align: right;
+    }
+
+}
+
+@media only screen and (max-width: 415px){
+    /* mobile styling */ 
+    html {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    #vehicleList {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+
+    .modify-button, .narrow-button  {
+        background-color: gray;
+        color: black;
+    }
+
+    #manageMakes, #manageClasses, #manageTypes, #addVehicles {
+        padding: 2px;   
+    }
+
+    #addVehicles {
+        margin-top: 15px;
+    }
+
+    #make_drop, #type_drop, #class_drop {
+        padding: 3px;
+        margin: 2px;
+    }
+
+    #class_drop {
+        margin-bottom: 5px;
+    }
+
+    h3 {
+        margin-bottom: 1px;
+    }
+    
+    #list {
+        text-align: center;
+        
+    }
+}
+
+
+
+
+
+
