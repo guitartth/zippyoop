@@ -96,37 +96,37 @@ switch ($action)
         
         if($make_id)
         {
-            $vehicles = get_vehicles_by_make($make_id, $order);
-            $makes = get_makes();
-            $types = get_types();
-            $classes = get_classes();
+            $vehicles = Vehicles::get_vehicles_by_make($make_id, $order);
+            $makes = Make::get_makes();
+            $types = Type::get_types();
+            $classes = Classes::get_classes();
             include('view/vehicle_list.php');
             break;
         }
         else if(!$make_id && $type_id)
         {
-            $vehicles = get_vehicles_by_type($type_id, $order);
-            $makes = get_makes();
-            $types = get_types();
-            $classes = get_classes();
+            $vehicles = Vehicles::get_vehicles_by_type($type_id, $order);
+            $makes = Make::get_makes();
+            $types = Type::get_types();
+            $classes = Classes::get_classes();
             include('view/vehicle_list.php');
             break;
         }
         else if(!$make_id && !$type_id && $class_id)
         {
-            $vehicles = get_vehicles_by_class($class_id, $order);
-            $makes = get_makes();
-            $types = get_types();
-            $classes = get_classes();
+            $vehicles = Vehicles::get_vehicles_by_class($class_id, $order);
+            $makes = Make::get_makes();
+            $types = Type::get_types();
+            $classes = Classes::get_classes();
             include('view/vehicle_list.php');
             break;
         }
         else
         {
-            $vehicles = get_vehicles_by_class($class_id, $order);
-            $makes = get_makes();
-            $types = get_types();
-            $classes = get_classes();
+            $vehicles = Vehicles::get_vehicles_by_class($class_id, $order);
+            $makes = Make::get_makes();
+            $types = Type::get_types();
+            $classes = Classes::get_classes();
             include('view/vehicle_list.php');
             break;
         }
@@ -135,7 +135,7 @@ switch ($action)
         {
             try
             {
-                delete_vehicle($vehicle_id);
+                Vehicles::delete_vehicle($vehicle_id);
             }
             catch (PDOException $e)
             {
@@ -146,11 +146,11 @@ switch ($action)
         }
         break;
     case "manage_makes":
-        $makes = get_makes();
+        $makes = Make::get_makes();
         include('view/make_list.php');
         break;
     case "add_make":
-        add_make($make_name);
+        Make::add_make($make_name);
         header("Location: .?action=manage_makes");
         break;
     case "delete_make":
@@ -158,7 +158,7 @@ switch ($action)
         {
             try
             {
-                delete_make($make_id);
+                Make::delete_make($make_id);
             }
             catch (PDOException $e)
             {
@@ -170,11 +170,11 @@ switch ($action)
         header("Location: .?action=manage_makes");
         break;
     case "manage_types":
-        $types = get_types();
+        $types = Type::get_types();
         include('view/type_list.php');
         break;
     case "add_type":
-        add_type($type_name);
+        Type::add_type($type_name);
         header("Location: .?action=manage_types");
         break;
     case "delete_type":
@@ -182,7 +182,7 @@ switch ($action)
         {
             try 
             {
-                delete_type($type_id);
+                Type::delete_type($type_id);
             } 
             catch (PDOException $e) 
             {
@@ -194,11 +194,11 @@ switch ($action)
         header("Location: .?action=manage_types");
         break;
     case "manage_classes":
-        $classes = get_classes();
+        $classes = Classes::get_classes();
         include('view/class_list.php');
         break;
     case "add_class":
-        add_class($class_name);
+        Classes::add_class($class_name);
         header("Location: .?action=manage_classes");
         break;
     case "delete_class":
@@ -206,7 +206,7 @@ switch ($action)
         {
             try 
             {
-                delete_class($class_id);
+                Classes::delete_class($class_id);
             } 
             catch (PDOException $e) 
             {
@@ -220,7 +220,7 @@ switch ($action)
     case "add_vehicle":
         if($year && $price && $type_id && $class_id && $make_id && $model)
         {
-            add_vehicle($year, $price, $type_id, $class_id, $make_id, $model);
+            Vehicles::add_vehicle($year, $price, $type_id, $class_id, $make_id, $model);
         }
         else
         {
@@ -231,9 +231,9 @@ switch ($action)
         header("Location: .?action=default");
         break;
     case "add_vehicle_page":
-        $makes = get_makes();
-        $types = get_types();
-        $classes = get_classes();
+        $makes = Make::get_makes();
+        $types = Type::get_types();
+        $classes = Classes::get_classes();
         include('./view/add_car.php');
         break;
     case "login":
@@ -252,10 +252,10 @@ switch ($action)
         include('../model/admin.php');
         break;
     default:
-        $vehicles = get_vehicles_by_class($class_id, $order);
-        $makes = get_makes();
-        $types = get_types();
-        $classes = get_classes();
+        $vehicles = Vehicles::get_vehicles_by_class($class_id, $order);
+        $makes = Make::get_makes();
+        $types = Type::get_types();
+        $classes = Classes::get_classes();
         include('view/vehicle_list.php');
         break;
 }

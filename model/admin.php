@@ -1,15 +1,18 @@
 <?php
 
-switch ($action)
-{
+require('/class_db.php');
+require('/make_db.php');
+require('/type_db.php');
+require('/vehicles_db.php');
+require('/admin_db.php');
+
+
+switch ($action) {
     case "login":
-        if(is_valid_admin_login($username, $password))
-        {
+        if (AdminDB::is_valid_admin_login($username, $password)) {
             $_SESSION['is_valid_admin'] = true;
             header("Location: .?action=search_vehicles");
-        }
-        else
-        {
+        } else {
             $login_mesage = 'You must login to view this page.';
             include('../admin/view/login.php');
         }
@@ -19,15 +22,15 @@ switch ($action)
         break;
     case "register":
         include('../admin/util/valid_register.php');
-        valid_registration($username, $password, $confirm_password);
-        // check if this is correct errors array
-        if(!empty($_SESSION['errors']))
-        {
-            include('../admin/view/register.php');
+        ValidRegister::valid_registration($username, $password, $confirm_password);
+        if (self::username_exists($username)) {
+            array_push($errors, "The username you entered is already taken.");
         }
-        else
-        {
-            add_admin($username, $password);
+        // check if this is correct errors array
+        if (!empty($_SESSION['errors'])) {
+            include('../admin/view/register.php');
+        } else {
+            AdminDB::add_admin($username, $password);
             $_SESSION['is_valid_admin'] = true;
             header("Location: .?action=search_vehicles");
         }
@@ -51,5 +54,8 @@ switch ($action)
         include('../admin/view/login.php');
         break;
 }
+
+
+
 
 ?>

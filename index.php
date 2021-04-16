@@ -74,37 +74,37 @@ switch ($action)
         
         if($make_id)
         {
-            $vehicles = get_vehicles_by_make($make_id, $order);
-            $makes = get_makes();
-            $types = get_types();
-            $classes = get_classes();
+            $vehicles = Vehicles::get_vehicles_by_make($make_id, $order);
+            $makes = Make::get_makes();
+            $types = Type::get_types();
+            $classes = Classes::get_classes();
             include('view/vehicle_list.php');
             break;
         }
         else if(!$make_id && $type_id)
         {
-            $vehicles = get_vehicles_by_type($type_id, $order);
-            $makes = get_makes();
-            $types = get_types();
-            $classes = get_classes();
+            $vehicles = Vehicles::get_vehicles_by_type($type_id, $order);
+            $makes = Make::get_makes();
+            $types = Type::get_types();
+            $classes = Classes::get_classes();
             include('view/vehicle_list.php');
             break;
         }
         else if(!$make_id && !$type_id && $class_id)
         {
-            $vehicles = get_vehicles_by_class($class_id, $order);
-            $makes = get_makes();
-            $types = get_types();
-            $classes = get_classes();
+            $vehicles = Vehicles::get_vehicles_by_class($class_id, $order);
+            $makes = Make::get_makes();
+            $types = Type::get_types();
+            $classes = Classes::get_classes();
             include('view/vehicle_list.php');
             break;
         }
         else
         {
-            $vehicles = get_vehicles_by_class($class_id, $order);
-            $makes = get_makes();
-            $types = get_types();
-            $classes = get_classes();
+            $vehicles = Vehicles::get_vehicles_by_class($class_id, $order);
+            $makes = Make::get_makes();
+            $types = Type::get_types();
+            $classes = Classes::get_classes();
             include('view/vehicle_list.php');
             break;
         }
@@ -124,10 +124,10 @@ switch ($action)
         include('./view/logout.php');
         break;
     default:
-        $vehicles = get_vehicles_by_class($class_id, $order);
-        $makes = get_makes();
-        $types = get_types();
-        $classes = get_classes();
+        $vehicles = Vehicles::get_vehicles_by_class($class_id, $order);
+        $makes = Make::get_makes();
+        $types = Type::get_types();
+        $classes = Classes::get_classes();
         include('view/vehicle_list.php');
         break;
 }
