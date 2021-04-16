@@ -2,7 +2,7 @@
 // OOP Database 
 class Database
 {
-    private static $dsn = 'mysql:host=j21q532mu148i8ms.cbetxkdyhwsb.us-east-1.rds.amazonaws.com';
+    private static $dsn = 'mysql:host=j21q532mu148i8ms.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=j9ulzg6cb0nv774f';
     private static $username = 'p85i5u4ijvnsgdh7';
     private static $password = 'dnpwoc1cixp0316c';
     private static $db;
