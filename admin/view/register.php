@@ -1,5 +1,5 @@
 <?php
-
+echo '<script>alert("On show register!")</script>';
 // INF653 VB Login Project
 // Author: Craig Freeburg
 // Date: 4/1/2021
