@@ -9,6 +9,7 @@ require('/admin_db.php');
 
 switch ($action) {
     case "login":
+        echo '<script>alert("In Login")</script>';
         if (AdminDB::is_valid_admin_login($username, $password)) {
             $_SESSION['is_valid_admin'] = true;
             header("Location: .?action=search_vehicles");
@@ -18,6 +19,7 @@ switch ($action) {
         }
         break;
     case "show_login":
+        echo '<script>alert("in Show_login!")</script>';
         include('../admin/view/login.php');
         break;
     case "register":
