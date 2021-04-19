@@ -37,5 +37,5 @@ class ValidRegister {
         return $errors;
     }
 }
-?>
+
     

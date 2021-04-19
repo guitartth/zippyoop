@@ -52,6 +52,6 @@ class AdminDB
         $statement->closeCursor();
     }
 }
-
+?>
 
 
