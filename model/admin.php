@@ -24,7 +24,7 @@ switch ($action) {
         break;
     case "register":
         include('../admin/util/valid_register.php');
-        ValidRegister::valid_registration($username, $password, $confirm_password);
+        //ValidRegister::valid_registration($username, $password, $confirm_password);
         if (self::username_exists($username)) {
             array_push($errors, "The username you entered is already taken.");
         }
